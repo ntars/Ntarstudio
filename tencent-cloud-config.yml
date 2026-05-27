@@ -1,0 +1,40 @@
+# 腾讯云静态网站托管配置文件
+# 用于配置腾讯云 COS + CDN 静态网站托管
+
+# 存储桶名称（需要替换为实际的存储桶名称）
+bucket: your-bucket-name
+
+# 存储桶所在区域（例如：ap-beijing, ap-shanghai, ap-guangzhou 等）
+region: ap-beijing
+
+# 网站根目录（相对于项目根目录）
+website_root: .
+
+# 索引文档
+index_document: index.html
+
+# 错误文档
+error_document: index.html
+
+# 是否启用 CDN 加速
+enable_cdn: true
+
+# CDN 域名（如果启用 CDN，需要替换为实际的 CDN 域名）
+cdn_domain: ""
+
+# 缓存配置
+cache_rules:
+  - pattern: "*.html"
+    ttl: 0  # HTML 文件不缓存或设置较短缓存时间
+  - pattern: "*.css"
+    ttl: 86400  # CSS 文件缓存 1 天
+  - pattern: "*.js"
+    ttl: 86400  # JS 文件缓存 1 天
+  - pattern: "*.jpg"
+    ttl: 2592000  # 图片文件缓存 30 天
+  - pattern: "*.png"
+    ttl: 2592000
+  - pattern: "*.svg"
+    ttl: 2592000
+  - pattern: "*.ico"
+    ttl: 2592000
