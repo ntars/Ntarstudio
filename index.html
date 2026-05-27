@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="color-scheme: dark;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>星玖工作室 - Ntarstudio</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon-color.svg?v=3">
+    <link rel="shortcut icon" href="./assets/img/favicon-color.svg?v=3"/>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+<body>
+    <div class="title-header">
+        <img class="title-logo" src="./assets/img/favicon-color.svg" alt="星玖工作室 Logo">
+        <div class="title-text">
+            <div class="title-main">星玖工作室</div>
+            <div class="title-sub">Ntarstudio</div>
+        </div>
+    </div>
+    <canvas class="fireworks"></canvas>
+    <div class="index">
+        <div class="hello">
+            <div class="title" id="greeting-title">
+                <div class="title-hi">Hi, I'm</div>
+                <span class="title-name">Ntars</span>
+            </div>
+            <div class="hello-desc" id="typed"></div>
+        </div>
+        <div class="content-divider"></div>
+        <div class="quickly-link">
+            <div class="main">
+                <div class="title-hi">Selected Projects</div>
+            </div>
+            <div class="projects-spacer"></div>
+            <div class="link-card">
+                <div class="link-card-list">
+                    <div class="magical link-card-item">
+                        <a href="https://www.ntars.cn/" target="_blank" rel="noopener noreferrer">
+                            <div class="info">
+                                <div class="info-title">星玖工作室</div>
+                                <div class="info-desc">关于我们与服务展示</div>
+                            </div>
+                            <div class="icon icon-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="magical link-card-item">
+                        <a href="https://yi.ntars.cn/" target="_blank" rel="noopener noreferrer">
+                            <div class="info">
+                                <div class="info-title">NTYI-LINK</div>
+                                <div class="info-desc">传统文化与现代科技的智慧连接</div>
+                            </div>
+                            <div class="icon icon-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="magical link-card-item">
+                        <a href="https://github.com/ntars" target="_blank" rel="noopener noreferrer">
+                            <div class="info">
+                                <div class="info-title">GitHub 主页</div>
+                                <div class="info-desc">开源项目与代码仓库</div>
+                            </div>
+                            <div class="icon icon-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="magical link-card-item">
+                        <a href="https://v.douyin.com/nR0PSoflcOk/" target="_blank" rel="noopener noreferrer">
+                            <div class="info">
+                                <div class="info-title">抖音 Douyin</div>
+                                <div class="info-desc">短视频分享与创意内容创作</div>
+                            </div>
+                            <div class="icon icon-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="magical link-card-item">
+                        <a href="https://b23.tv/4zktLr9/" target="_blank" rel="noopener noreferrer">
+                            <div class="info">
+                                <div class="info-title">哔哩哔哩 Bilibili</div>
+                                <div class="info-desc">技术教程与创意视频创作平台</div>
+                            </div>
+                            <div class="icon icon-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="magical link-card-item">
+                        <a href="https://ifdian.net/a/ntars/" target="_blank" rel="noopener noreferrer">
+                            <div class="info">
+                                <div class="info-title">爱发电 Afdian</div>
+                                <div class="info-desc">创作者赞助支持平台</div>
+                            </div>
+                            <div class="icon icon-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-beian">
+                <a class="footer-beian-link" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">蜀ICP备2026027050号</a>
+            </div>
+            <div class="footer-copyright">© 2024 - 2026 Ntarstudio. All Rights Reserved.</div>
+        </div>
+    </footer>
+    <div class="widget">
+        <div class="shape-light"></div>
+        <div class="shape-star">
+            <div class="rising-stars rising-stars-visible">
+                <div style="height:1px;width:1px"></div>
+                <div style="height:2px;width:2px"></div>
+                <div style="height:1px;width:1px"></div>
+            </div>
+        </div>
+        <div class="shape-earth"></div>
+    </div>
+</body>
+<script>
+    // 全局禁止复制选中文字
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // 禁止显示悬停链接URL（左下角）
+    document.addEventListener('mouseover', function(e) {
+        if (e.target.tagName === 'A') {
+            e.target.setAttribute('data-href', e.target.href);
+            e.target.removeAttribute('href');
+        }
+    });
+    
+    document.addEventListener('mouseout', function(e) {
+        if (e.target.tagName === 'A' && e.target.hasAttribute('data-href')) {
+            e.target.href = e.target.getAttribute('data-href');
+            e.target.removeAttribute('data-href');
+        }
+    });
+    
+    // 点击时恢复链接功能
+    document.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && e.target.hasAttribute('data-href')) {
+            const href = e.target.getAttribute('data-href');
+            window.open(href, e.target.target || '_self');
+            e.preventDefault();
+        }
+    });
+    
+    // 设备检测与彩蛋切换功能
+    (function() {
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        const greetingTitle = document.getElementById('greeting-title');
+        const titleHi = greetingTitle.querySelector('.title-hi');
+        const titleName = greetingTitle.querySelector('.title-name');
+        
+        // 默认显示：手机显示 "Hi, I'm Ntars"，电脑显示 "Hi, We're Ntarstudio"
+        let isStudioMode = !isMobile; // 电脑默认为true，手机默认为false
+        let isAnimating = false; // 防止动画期间重复点击
+        
+        function updateGreeting() {
+            if (isStudioMode) {
+                titleHi.textContent = 'Hi, We\'re';
+                titleName.textContent = 'Ntarstudio';
+            } else {
+                titleHi.textContent = 'Hi, I\'m';
+                titleName.textContent = 'Ntars';
+            }
+        }
+        
+        // 初始化显示
+        updateGreeting();
+        
+        // 点击切换彩蛋（带动画）
+        greetingTitle.addEventListener('click', function() {
+            if (isAnimating) return; // 动画进行中则忽略点击
+            isAnimating = true;
+            
+            // 第一步：淡出
+            greetingTitle.classList.add('fade-out');
+            greetingTitle.classList.remove('fade-in');
+            
+            // 等待淡出动画完成
+            setTimeout(() => {
+                // 第二步：切换文本
+                isStudioMode = !isStudioMode;
+                updateGreeting();
+                
+                // 第三步：淡入
+                greetingTitle.classList.remove('fade-out');
+                greetingTitle.classList.add('fade-in');
+                
+                // 等待淡入动画完成
+                setTimeout(() => {
+                    greetingTitle.classList.remove('fade-in');
+                    isAnimating = false;
+                }, 300);
+            }, 300);
+        });
+    })();
+    
+    // 打字效果，感谢 typed.js: https://mattboldt.github.io/typed.js/docs/
+    const options = {
+        strings: [
+            ">_ Remember what is important ^1000",
+            ">_ Forget what is painful ^1000",
+        ],
+        typeSpeed: 50, // 打印速度
+        backSpeed: 20, // 回退速度
+        startDelay: 300, // 开始之前的延迟300毫秒
+        loop: true, // 是否循环
+        showCursor: false, // 不显示光标
+    };
+    const typed = new Typed('#typed', options);
+</script>
+<script src="./assets/js/app.min.js"></script>
+<script src="./assets/js/anime.js"></script>
+<script src="./assets/js/firework.js"></script>
+</html>
