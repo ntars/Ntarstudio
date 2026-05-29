@@ -1,24 +1,57 @@
 <!DOCTYPE html>
-<html lang="zh-CN" style="color-scheme: dark;">
+<html lang="zh-CN" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; connect-src 'self'; frame-src 'none'; object-src 'none';">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0E0E13">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="星玖工作室">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/img/apple-touch-icon.png">
     <title>星玖工作室 - Ntarstudio</title>
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon-color.svg?v=3">
-    <link rel="shortcut icon" href="./assets/img/favicon-color.svg?v=3"/>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon-color.svg?v=3">
+    <link rel="shortcut icon" href="assets/img/favicon-color.svg?v=3">
+    <script>
+        (function(){
+            document.documentElement.classList.add('theme-lock');
+            var theme;
+            var mq = window.matchMedia('(prefers-color-scheme: dark)');
+            if (mq.media !== 'not all') {
+                theme = mq.matches ? 'dark' : 'light';
+            } else {
+                var h = new Date().getHours();
+                theme = (h >= 6 && h < 18) ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.style.colorScheme = theme;
+            requestAnimationFrame(function(){
+                requestAnimationFrame(function(){
+                    document.documentElement.classList.remove('theme-lock');
+                });
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/base.css">
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
 <body>
-    <div class="title-header">
-        <img class="title-logo" src="./assets/img/favicon-color.svg" alt="星玖工作室 Logo">
-        <div class="title-text">
-            <div class="title-main">星玖工作室</div>
-            <div class="title-sub">Ntarstudio</div>
-        </div>
-    </div>
+
+    <!-- ==================== 烟花粒子背景画布 ==================== -->
     <canvas class="fireworks"></canvas>
+
+    <!-- ==================== 主内容区 ==================== -->
     <div class="index">
+
+        <!-- 问候语区域 -->
         <div class="hello">
             <div class="title" id="greeting-title">
                 <div class="title-hi">Hi, I'm</div>
@@ -26,14 +59,22 @@
             </div>
             <div class="hello-desc" id="typed"></div>
         </div>
+
+        <!-- 内容分割线（虚线） -->
         <div class="content-divider"></div>
+
+        <!-- 快速链接区域 -->
         <div class="quickly-link">
             <div class="main">
-                <div class="title-hi">Selected Projects</div>
+                <div class="title-hi" ondblclick="var h=document.documentElement;var t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);h.style.colorScheme=t;var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E0E13':'#E8EEFA')">Selected Projects</div>
             </div>
             <div class="projects-spacer"></div>
+
+            <!-- 项目卡片列表 -->
             <div class="link-card">
                 <div class="link-card-list">
+
+                    <!-- 卡片1：星玖工作室 -->
                     <div class="magical link-card-item">
                         <a href="https://www.ntars.cn/" target="_blank" rel="noopener noreferrer">
                             <div class="info">
@@ -42,11 +83,13 @@
                             </div>
                             <div class="icon icon-arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="currentColor"></path>
                                 </svg>
                             </div>
                         </a>
                     </div>
+
+                    <!-- 卡片2：NTYI-LINK -->
                     <div class="magical link-card-item">
                         <a href="https://yi.ntars.cn/" target="_blank" rel="noopener noreferrer">
                             <div class="info">
@@ -55,11 +98,13 @@
                             </div>
                             <div class="icon icon-arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="currentColor"></path>
                                 </svg>
                             </div>
                         </a>
                     </div>
+
+                    <!-- 卡片3：GitHub -->
                     <div class="magical link-card-item">
                         <a href="https://github.com/ntars" target="_blank" rel="noopener noreferrer">
                             <div class="info">
@@ -68,11 +113,13 @@
                             </div>
                             <div class="icon icon-arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="currentColor"></path>
                                 </svg>
                             </div>
                         </a>
                     </div>
+
+                    <!-- 卡片4：抖音 -->
                     <div class="magical link-card-item">
                         <a href="https://v.douyin.com/nR0PSoflcOk/" target="_blank" rel="noopener noreferrer">
                             <div class="info">
@@ -81,24 +128,28 @@
                             </div>
                             <div class="icon icon-arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="currentColor"></path>
                                 </svg>
                             </div>
                         </a>
                     </div>
+
+                    <!-- 卡片5：Bilibili -->
                     <div class="magical link-card-item">
-                        <a href="https://b23.tv/4zktLr9/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://space.bilibili.com/499925438" target="_blank" rel="noopener noreferrer">
                             <div class="info">
                                 <div class="info-title">哔哩哔哩 Bilibili</div>
                                 <div class="info-desc">技术教程与创意视频创作平台</div>
                             </div>
                             <div class="icon icon-arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="currentColor"></path>
                                 </svg>
                             </div>
                         </a>
                     </div>
+
+                    <!-- 卡片6：爱发电 -->
                     <div class="magical link-card-item">
                         <a href="https://ifdian.net/a/ntars/" target="_blank" rel="noopener noreferrer">
                             <div class="info">
@@ -107,15 +158,18 @@
                             </div>
                             <div class="icon icon-arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="#B3B3C1"></path>
+                                    <path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="currentColor"></path>
                                 </svg>
                             </div>
                         </a>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- ==================== 页脚区域 ==================== -->
     <footer class="app-footer">
         <div class="footer-content">
             <div class="footer-beian">
@@ -124,6 +178,8 @@
             <div class="footer-copyright">© 2024 - 2026 Ntarstudio. All Rights Reserved.</div>
         </div>
     </footer>
+
+    <!-- ==================== 底部装饰元素（光效、星星、地球） ==================== -->
     <div class="widget">
         <div class="shape-light"></div>
         <div class="shape-star">
@@ -135,56 +191,26 @@
         </div>
         <div class="shape-earth"></div>
     </div>
+
 </body>
+
+<!-- ==================== 内联脚本：设备检测与打字效果 ==================== -->
 <script>
-    // 全局禁止复制选中文字
-    document.addEventListener('copy', function(e) {
-        e.preventDefault();
-        return false;
-    });
-    
-    document.addEventListener('selectstart', function(e) {
-        e.preventDefault();
-        return false;
-    });
-    
-    // 禁止显示悬停链接URL（左下角）
-    document.addEventListener('mouseover', function(e) {
-        if (e.target.tagName === 'A') {
-            e.target.setAttribute('data-href', e.target.href);
-            e.target.removeAttribute('href');
-        }
-    });
-    
-    document.addEventListener('mouseout', function(e) {
-        if (e.target.tagName === 'A' && e.target.hasAttribute('data-href')) {
-            e.target.href = e.target.getAttribute('data-href');
-            e.target.removeAttribute('data-href');
-        }
-    });
-    
-    // 点击时恢复链接功能
-    document.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A' && e.target.hasAttribute('data-href')) {
-            const href = e.target.getAttribute('data-href');
-            window.open(href, e.target.target || '_self');
-            e.preventDefault();
-        }
-    });
-    
-    // 设备检测与彩蛋切换功能
+    // ==================== 设备检测与彩蛋切换功能 ====================
     (function() {
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-        const greetingTitle = document.getElementById('greeting-title');
-        const titleHi = greetingTitle.querySelector('.title-hi');
-        const titleName = greetingTitle.querySelector('.title-name');
-        
-        // 默认显示：手机显示 "Hi, I'm Ntars"，电脑显示 "Hi, We're Ntarstudio"
-        let isStudioMode = !isMobile; // 电脑默认为true，手机默认为false
-        let isAnimating = false; // 防止动画期间重复点击
-        
-        function updateGreeting() {
-            if (isStudioMode) {
+        var isPhone = window.innerWidth < 768;
+        var isTablet = window.innerWidth >= 768 && window.innerWidth <= 1180 &&
+                       ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+        var isDesktop = !isPhone && !isTablet;
+
+        var greetingTitle = document.getElementById('greeting-title');
+        var titleHi = greetingTitle.querySelector('.title-hi');
+        var titleName = greetingTitle.querySelector('.title-name');
+        var isAnimating = false;
+        var currentMode = isDesktop ? 'studio' : (isTablet ? ((window.innerWidth > window.innerHeight) ? 'studio' : 'person') : 'person');
+
+        function updateGreeting(mode) {
+            if (mode === 'studio') {
                 titleHi.textContent = 'Hi, We\'re';
                 titleName.textContent = 'Ntarstudio';
             } else {
@@ -192,53 +218,153 @@
                 titleName.textContent = 'Ntars';
             }
         }
-        
-        // 初始化显示
-        updateGreeting();
-        
-        // 点击切换彩蛋（带动画）
-        greetingTitle.addEventListener('click', function() {
-            if (isAnimating) return; // 动画进行中则忽略点击
+
+        updateGreeting(currentMode);
+
+        function animateSwitch(newMode) {
+            if (isAnimating || newMode === currentMode) return;
             isAnimating = true;
-            
-            // 第一步：淡出
             greetingTitle.classList.add('fade-out');
             greetingTitle.classList.remove('fade-in');
-            
-            // 等待淡出动画完成
-            setTimeout(() => {
-                // 第二步：切换文本
-                isStudioMode = !isStudioMode;
-                updateGreeting();
-                
-                // 第三步：淡入
+            setTimeout(function() {
+                currentMode = newMode;
+                updateGreeting(currentMode);
                 greetingTitle.classList.remove('fade-out');
                 greetingTitle.classList.add('fade-in');
-                
-                // 等待淡入动画完成
-                setTimeout(() => {
+                setTimeout(function() {
                     greetingTitle.classList.remove('fade-in');
                     isAnimating = false;
                 }, 300);
             }, 300);
+        }
+
+        greetingTitle.addEventListener('click', function() {
+            if (isTablet) return;
+            animateSwitch(currentMode === 'studio' ? 'person' : 'studio');
+        });
+
+        function handleResize() {
+            var newPhone = window.innerWidth < 768;
+            var newTablet = window.innerWidth >= 768 && window.innerWidth <= 1180 &&
+                            ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+            var newDesktop = !newPhone && !newTablet;
+
+            if (newTablet && !isTablet) {
+                isPhone = newPhone; isTablet = newTablet; isDesktop = newDesktop;
+                animateSwitch((window.innerWidth > window.innerHeight) ? 'studio' : 'person');
+                return;
+            }
+            if (!newTablet && isTablet) {
+                isPhone = newPhone; isTablet = newTablet; isDesktop = newDesktop;
+                animateSwitch(isDesktop ? 'studio' : 'person');
+                return;
+            }
+
+            if (isTablet) {
+                var newLandscape = window.innerWidth > window.innerHeight;
+                animateSwitch(newLandscape ? 'studio' : 'person');
+            }
+
+            isPhone = newPhone; isTablet = newTablet; isDesktop = newDesktop;
+
+            var themeMeta = document.querySelector('meta[name=theme-color]');
+            if (themeMeta) {
+                var theme = document.documentElement.getAttribute('data-theme');
+                themeMeta.setAttribute('content', theme === 'dark' ? '#0E0E13' : '#E8EEFA');
+            }
+        }
+
+        if (isTablet) {
+            window.addEventListener('resize', handleResize);
+            window.addEventListener('orientationchange', function() {
+                setTimeout(handleResize, 200);
+            });
+        }
+
+        window.addEventListener('resize', function() {
+            var themeMeta = document.querySelector('meta[name=theme-color]');
+            if (themeMeta) {
+                var theme = document.documentElement.getAttribute('data-theme');
+                themeMeta.setAttribute('content', theme === 'dark' ? '#0E0E13' : '#E8EEFA');
+            }
         });
     })();
-    
-    // 打字效果，感谢 typed.js: https://mattboldt.github.io/typed.js/docs/
-    const options = {
+
+    // ==================== 打字效果（Typed.js） ====================
+    var typedOptions = {
         strings: [
             ">_ Remember what is important ^1000",
             ">_ Forget what is painful ^1000",
         ],
-        typeSpeed: 50, // 打印速度
-        backSpeed: 20, // 回退速度
-        startDelay: 300, // 开始之前的延迟300毫秒
-        loop: true, // 是否循环
-        showCursor: false, // 不显示光标
+        typeSpeed: 50,
+        backSpeed: 20,
+        startDelay: 300,
+        loop: true,
+        showCursor: false,
     };
-    const typed = new Typed('#typed', options);
+    var typed = new Typed('#typed', typedOptions);
 </script>
-<script src="./assets/js/app.min.js"></script>
-<script src="./assets/js/anime.js"></script>
-<script src="./assets/js/firework.js"></script>
+
+<!-- ==================== 脚本加载（按依赖顺序） ==================== -->
+
+<!-- 1. 安全防护模块（最高优先级，最先加载） -->
+<script src="assets/js/security.js"></script>
+
+<!-- 2. 应用核心逻辑（卡片光效 hover 等） -->
+<script src="assets/js/app.min.js"></script>
+
+<!-- 3. 动画引擎库（anime.js，烟花效果依赖） -->
+<script src="assets/js/anime.js"></script>
+
+<!-- 4. 鼠标/触摸烟花粒子效果 -->
+<script src="assets/js/firework.js"></script>
+
+<!-- 5. 鼠标拖尾效果（主题适配 + 触摸支持） -->
+<script src="assets/js/trail.js"></script>
+
+<!-- 6. 背景交互粒子（鼠标排斥 + 触摸支持） -->
+<script src="assets/js/bg.js"></script>
+
+<!-- ==================== PWA / Service Worker 注册 ==================== -->
+<script>
+    // 注册 Service Worker 实现离线缓存加速
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('./sw.js')
+                .then(function (reg) {
+                    console.log('[PWA] Service Worker registered:', reg.scope);
+                    // 监听 SW 更新
+                    reg.addEventListener('updatefound', function () {
+                        var newWorker = reg.installing;
+                        if (!newWorker) return;
+                        newWorker.addEventListener('statechange', function () {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                console.log('[PWA] New version available, please refresh.');
+                            }
+                        });
+                    });
+                })
+                .catch(function (err) {
+                    console.log('[PWA] Service Worker registration failed:', err);
+                });
+        });
+    }
+
+    // ==================== PWA 安装提示（beforeinstallprompt） ====================
+    // 监听浏览器原生 PWA 安装事件，允许用户将网页安装为桌面/主屏幕应用
+    var deferredPrompt;
+    window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        // Android Chrome / 部分桌面浏览器支持安装横幅
+        // 此处预留自定义安装按钮逻辑，默认依赖浏览器原生 UI
+        console.log('[PWA] Install prompt available');
+    });
+
+    // 检测是否已以 PWA 模式运行
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+        console.log('[PWA] Running in standalone mode');
+    }
+</script>
+
 </html>

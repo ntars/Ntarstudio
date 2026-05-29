@@ -15,8 +15,17 @@ var pointerY = 0;
 // 根据设备支持情况设置触摸或点击事件
 var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
 
-// 烟花颜色数组
-var colors = ['rgba(99, 97, 220, 0.2)', 'rgba(99, 97, 220, 0.4)', 'rgba(139, 240, 254, 0.2)'];
+// 烟花颜色数组（主题适配）
+var colorsDark = ['rgba(99, 97, 220, 0.2)', 'rgba(99, 97, 220, 0.4)', 'rgba(139, 240, 254, 0.2)'];
+var colorsLight = ['rgba(74, 108, 247, 0.2)', 'rgba(74, 108, 247, 0.4)', 'rgba(100, 180, 255, 0.2)'];
+var colors = colorsDark;
+function updateFireworkTheme() {
+  var theme = document.documentElement.getAttribute('data-theme');
+  colors = (theme === 'light') ? colorsLight : colorsDark;
+}
+updateFireworkTheme();
+var themeObserver = new MutationObserver(function() { updateFireworkTheme(); });
+themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
 // 设置 canvas 大小
 function setCanvasSize() {
@@ -66,9 +75,9 @@ function createCircle(x,y) {
   var p = {};
   p.x = x;
   p.y = y;
-  p.color = '#6361DC';
+  p.color = (document.documentElement.getAttribute('data-theme') === 'light') ? '#4A6CF7' : '#6361DC';
   p.radius = 0.1;
-  p.alpha = .01; //不透明度很小，所以等于没有，若需显示可以把不透明度调高
+  p.alpha = .01;
   p.lineWidth = 2;
   p.draw = function() {
     ctx.globalAlpha = p.alpha;

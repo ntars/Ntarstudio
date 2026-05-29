@@ -1,0 +1,35 @@
+{
+  "name": "星玖工作室",
+  "short_name": "Ntarstudio",
+  "description": "星玖工作室官网主页 - 创意技术与设计",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "background_color": "#0E0E13",
+  "theme_color": "#0E0E13",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/img/favicon-color.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["lifestyle", "utilities"],
+  "lang": "zh-CN",
+  "prefer_related_applications": false
+}
